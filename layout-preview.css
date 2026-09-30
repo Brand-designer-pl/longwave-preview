@@ -54,7 +54,7 @@ body.layout-preview{background:#e8e8ea;color:#141820;--muted:#747780;--line:#e6e
 .layout-preview .photo-interlude{display:none}.layout-preview .swipe-note{display:none}.layout-preview .filter-count{font-size:14px;color:#757983}.layout-preview .discovery-heading{margin:14px 0 20px}
 .layout-preview .filters{background:#fff;border-color:#e7e8ec;border-radius:19px}
 .layout-preview #modal{background:#f8f8f9;border:1px solid white;box-shadow:0 25px 100px #1d243744}
-.layout-preview .destination-detail .modal-photo{padding:16px 16px 0;border-radius:35px;height:360px;object-fit:cover}
+.layout-preview .destination-detail .modal-photo{padding:0;margin:0;border-radius:0;display:block;width:100%;height:360px;object-fit:cover}
 .layout-preview .destination-detail .modal-body{padding:25px}.layout-preview .destination-detail h2{font-family:inherit;font-size:30px;letter-spacing:-.04em}.layout-preview .destination-detail .detail-specs>div{background:#fff;border-color:#e7e8ec}.layout-preview .destination-detail .btn{border-radius:14px;box-shadow:0 8px 14px #161d2922}
 @media(hover:hover){.editorial-card:hover>img{transform:scale(1.035)}}
 @media(max-width:850px){
@@ -75,7 +75,7 @@ body.layout-preview{background:#e8e8ea;color:#141820;--muted:#747780;--line:#e6e
  .layout-preview .mobile-nav button{color:#858995;font-size:10px;min-height:56px;border-radius:17px;gap:5px}.layout-preview .mobile-nav button.active{background:#151c2c;color:#fff;box-shadow:0 5px 12px #14203822}
  .layout-preview .page-heading h1{font-size:38px}.layout-preview .discovery-filter-panel>summary{width:100%}
  .layout-preview .discovery-categories{margin-left:-22px;margin-right:-22px;padding-left:22px;padding-right:22px}
- .layout-preview .destination-detail .modal-photo{height:310px;padding:12px 12px 0;border-radius:29px}
+ .layout-preview .destination-detail .modal-photo{height:310px;padding:0;border-radius:0}
 }
 @media(max-width:850px){.layout-preview .mobile-nav{transform:none;width:auto;max-width:none}}
 /* Full application rollout, including administration, forms and account screens. */
@@ -124,3 +124,6 @@ body.layout-preview{background:#e8e8ea;color:#141820;--muted:#747780;--line:#e6e
 .layout-preview .layout-switch,
 .modern-auth .btn,
 .modern-auth .demo-buttons button{border-radius:999px}
+
+/* The dialog clips its edge-to-edge cover to the outer rounded corners. */
+.layout-preview #modal:has(.destination-detail){padding:0;border:0;overflow-x:hidden}
