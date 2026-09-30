@@ -108,3 +108,10 @@ body.layout-preview{background:#e8e8ea;color:#141820;--muted:#747780;--line:#e6e
  .layout-preview .page-heading h1{font-size:34px}.layout-preview .page-heading>.btn{margin-top:6px}
  .modern-auth .login-layout{padding:12px}.modern-auth .auth-panel{margin-top:12px}
 }
+/* Discovery results use a responsive grid; the home recommendations retain their rail. */
+.layout-preview .discovery-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;overflow:visible;scroll-snap-type:none;margin:0;padding:0 0 30px}
+.layout-preview .discovery-rail>.editorial-card{min-width:0;width:100%;height:390px}
+.layout-preview .discovery-rail>.empty{grid-column:1/-1}
+@media(min-width:851px) and (max-width:1200px){.layout-preview .discovery-rail{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:601px) and (max-width:850px){.layout-preview .discovery-rail{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
+@media(max-width:600px){.layout-preview .discovery-rail{grid-template-columns:minmax(0,1fr);gap:22px}.layout-preview .discovery-rail>.editorial-card{height:390px}}
