@@ -29,7 +29,7 @@ body.layout-preview{background:#e8e8ea;color:#141820;--muted:#747780;--line:#e6e
 .editorial-rail,.layout-preview .discovery-rail{display:flex;gap:23px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#d3d5da transparent;padding:0 0 30px;scroll-padding-inline:0;margin:0}
 .editorial-card{position:relative;isolation:isolate;flex:0 0 31%;min-width:260px;height:390px;border-radius:24px;overflow:hidden;background:#bccdd5;color:white;scroll-snap-align:start;box-shadow:0 15px 20px -12px #171e3d66;transition:transform .3s ease}
 .editorial-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.editorial-card:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,#111a2c15 48%,#111a2ceb 100%)}
+.editorial-card:after{content:none}
 .editorial-card>img{z-index:-2}
 .editorial-age{position:absolute;right:15px;top:15px;display:grid;text-align:center;background:#ffffffd9;backdrop-filter:blur(10px);border-radius:12px;color:#1b2633;padding:8px 10px;font-size:13px;font-weight:650}
 .editorial-age small{font-size:11px;font-weight:400;margin-top:1px}
