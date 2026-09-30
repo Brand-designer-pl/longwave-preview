@@ -142,3 +142,16 @@ body.layout-preview{background:#e8e8ea;color:#141820;--muted:#747780;--line:#e6e
 /* Blend in stronger glass on precise-pointer hover; touch retains the soft base. */
 .editorial-card .editorial-hover-blur{position:absolute;inset:20% 0 0;z-index:-1;pointer-events:none;opacity:0;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);mask-image:linear-gradient(to bottom,transparent 0%,#00000015 12%,#00000066 32%,#000000c7 55%,#000 78%,#000 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#00000015 12%,#00000066 32%,#000000c7 55%,#000 78%,#000 100%);transition:opacity .6s ease}
 @media(hover:hover) and (pointer:fine){.editorial-card:hover .editorial-hover-blur,.editorial-card:focus-within .editorial-hover-blur{opacity:1}}
+
+/* Larger trip metadata; gently choreographed views and decorative image parallax. */
+.editorial-card p:not(.editorial-admin-meta){font-size:16px;line-height:1.4;flex-wrap:wrap;gap:6px;letter-spacing:-.01em}
+.editorial-card p:not(.editorial-admin-meta) svg{width:16px;height:16px}
+@keyframes longwave-view-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes longwave-card-in{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:no-preference){
+ body:not(.motion-off).layout-preview .page{animation:longwave-view-in .45s cubic-bezier(.2,.7,.2,1) both}
+ body:not(.motion-off) .editorial-card{animation:longwave-card-in .55s cubic-bezier(.2,.7,.2,1) both}
+ body:not(.motion-off) .editorial-card:nth-child(2){animation-delay:.05s}body:not(.motion-off) .editorial-card:nth-child(3){animation-delay:.1s}body:not(.motion-off) .editorial-card:nth-child(n+4){animation-delay:.15s}
+ body:not(.motion-off) .editorial-card>img{height:calc(100% + 40px);top:-20px;transform:translateY(var(--photo-shift,0px)) scale(1.02);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){body:not(.motion-off) .editorial-card:hover>img{transform:translateY(var(--photo-shift,0px)) scale(1.065)}}
